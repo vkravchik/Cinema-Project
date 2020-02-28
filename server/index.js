@@ -15,9 +15,6 @@ const multerMid = multer({
   }
 });
 
-// Helpers
-const { uploadImage } = require('./helpers');
-
 // Const
 const app = express();
 
@@ -34,20 +31,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/api/ping', (req, res) => {
   res.send('pong');
-});
-
-app.post('/uploads', async (req, res, next) => {
-  try {
-    const myFile = req.file;
-    const imageUrl = await uploadImage(myFile);
-
-    res.status(200).json({
-      message: "Upload was successful",
-      data: imageUrl
-    })
-  } catch (error) {
-    next(error)
-  }
 });
 
 app.use('/api/users', require('./routes/userRoutes'));

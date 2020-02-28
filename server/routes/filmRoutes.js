@@ -1,6 +1,7 @@
 const router = require('express').Router();
 
 const Film = require('../models/Film');
+const { uploadImage } = require('../helpers');
 
 router.get('/', (req, res) => {
  Film.find({}, (err, doc) => {
@@ -8,20 +9,30 @@ router.get('/', (req, res) => {
  }).populate('genresId');
 });
 
-router.post('/', (req, res) => {
-  const  { name, description, genresId } = req.body;
+router.post('/', async (req, res, next) => {
+  try {
+    const { name, description, genresId } = req.body;
+    const { file } = req;
 
-  const newFilm = new Film({
-    name,
-    description,
-    genresId
-  });
+    const poster = await uploadImage(file);
 
-  newFilm.save((err, doc) => {
-    if (err) return err;
+    if (poster) {
+      const newFilm = new Film({
+        name,
+        description,
+        posterUrl: poster.secure_url,
+        genresId
+      });
 
-    res.send(doc);
-  });
+      newFilm.save((err, doc) => {
+        if (err) return err;
+
+        res.send(doc);
+      });
+    }
+  } catch (error) {
+    next(error)
+  }
 });
 
 router.put('/', (req, res) => {

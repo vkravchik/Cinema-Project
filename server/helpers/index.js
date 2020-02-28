@@ -15,7 +15,7 @@ const uploadImage = (file) => new Promise((resolve, reject) => {
   cloudinary.uploader.upload(path.join(pathToPosterFolder, `/${originalname}`), {
     folder: 'poster'
   }, (err, res) => {
-    resolve(res);
+    err ? reject(err) : resolve(res);
   })
 });
 

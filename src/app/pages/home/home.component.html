@@ -1,1 +1,6 @@
 <app-menu></app-menu>
+<div class="cards-container">
+  <app-card *ngFor="let film of films"
+            [film]="film">
+  </app-card>
+</div>

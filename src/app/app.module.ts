@@ -10,6 +10,11 @@ import { FormsModule } from '@angular/forms';
 import { MenuComponent } from './components/menu/menu.component';
 import { SnackComponent } from './components/snack/snack.component';
 import { SnackDirective } from './core/directives/snack.directive';
+import { TableComponent } from './components/table/table.component';
+import { CardComponent } from './components/card/card.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FilmService } from './core/services/film.service';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -17,16 +22,22 @@ import { SnackDirective } from './core/directives/snack.directive';
     HomeComponent,
     MenuComponent,
     SnackComponent,
-    SnackDirective
+    SnackDirective,
+    TableComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     AppMaterialModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    FlexLayoutModule
   ],
-  providers: [],
+  providers: [
+    FilmService
+  ],
   entryComponents: [SnackComponent],
   bootstrap: [AppComponent]
 })

@@ -14,7 +14,9 @@ const multerMid = multer({
     fileSize: 5 * 1024 * 1024,
   }
 });
-const uploadImage = require('./helpers/helpers');
+
+// Helpers
+const { uploadImage } = require('./helpers');
 
 // Const
 const app = express();
@@ -25,10 +27,9 @@ const dbPort = process.env.DB_PORT || '27017';
 const dbName = process.env.DB_NAME || 'cinema';
 
 // App Use
-app.disable('x-powered-by');
-app.use(multerMid.single('file'));
 app.use(cors());
 app.use(express.json());
+app.use(multerMid.single('file'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/api/ping', (req, res) => {
@@ -39,13 +40,11 @@ app.post('/uploads', async (req, res, next) => {
   try {
     const myFile = req.file;
     const imageUrl = await uploadImage(myFile);
-    console.log(imageUrl);
-    res
-      .status(200)
-      .json({
-        message: "Upload was successful",
-        data: imageUrl
-      })
+
+    res.status(200).json({
+      message: "Upload was successful",
+      data: imageUrl
+    })
   } catch (error) {
     next(error)
   }

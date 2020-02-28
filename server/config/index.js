@@ -1,11 +1,9 @@
-const Cloud = require('@google-cloud/storage');
-const path = require('path');
-const serviceKey = path.join(__dirname, 'cinema-cloud-cfefe78eda3c.json');
+const cloudConfig = {
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.CLOUD_API_KEY,
+  api_secret: process.env.CLOUD_API_SECRET_KEY
+};
 
-const { Storage } = Cloud;
-const storage = new Storage({
-  keyFilename: serviceKey,
-  projectId: 'cinema-cloud'
-});
-
-module.exports = storage;
+module.exports = {
+  cloudConfig
+};

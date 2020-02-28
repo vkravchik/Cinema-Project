@@ -1,0 +1,3 @@
+{"_id":{"$oid":"5e57d98989342c3545c6665b"},"name":"Horror"}
+{"_id":{"$oid":"5e57d9b689342c3545c6665c"},"name":"Comedy"}
+{"_id":{"$oid":"5e57d9be89342c3545c6665d"},"name":"Action"}

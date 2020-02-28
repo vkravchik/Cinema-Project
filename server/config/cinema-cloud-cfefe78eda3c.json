@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "cinema-cloud",
+  "private_key_id": "cfefe78eda3c1fb50d9ac413ec8905c15520c462",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC66j0aVkB6R8T7\nMp69g/JxIl9Y4688drXWekQSTsFErOLEX9/7JkOfg+HtynHj68652bVIGUqYT3Cx\nkONidpiKcX3GAdSSc1xE7dScYHuAi5gTDLMDPcHwwsNHCokmlaMixIUFwuJFc0J8\nJFWWDXBZytPdSvffwgoqafC+CIpMlx79yY8wP/G0lLjT6sbkETbeM3KurqxrWueL\nFva3J0AZniiRr5pnP7K9V+Vo8rSW5R9l8OkLsBKxw39kutOatEFEQ2hjytj+av5J\nOEuwmnDIW5PNj6SQf0a7JeDUJFxNYEeLdZe1XoXmeRLMCZp6OIYeKsaPVo6elT2h\nNZp7w/9HAgMBAAECggEABo3UGqpPlHoTxCMgQdDwnVrxMPK64EnhUmXzIRk12aye\nPviFqA7NbDh5oZbpq25HT2j83ExWu0R91RwZfQhfjOsx19GUnJYC9D/KprkTW4yJ\nhpF5bXGq7UBHDKSn7nxsvflaGLuep4TFHglAHwTVnbBpAWdxjZ0GMjqIwIEYKFtM\nsC/t4Qbk4IsLHtGcqX4gz62UFh8WzaXkuosP+zAgNoTtUU/Ry31A+bl5LfL9/qtK\nbGsxUGAA+LM+s7ad5tcmvvE7QK8se6s6eS3ASCFEWzrQlZpv0k9xLZ2K240FnF69\nwvsBR3MZ1/J0lVHNIAjuyAbCyRS+9F0lqqfW5LV5cQKBgQD883dT5GJ1EAQIne/r\nINo8YSx0idRLuVr0l6rkMNZ6n/WE//fY8N/DdmMxsu/oXbAzcZpdhszaufVczsgG\nfzLQpp11kATsDiwHHzMuivTZUK9dDmGSfblU55PI8Z6ui3GXMcK6LpKl2YaMuHuW\ni9SweMsELQFkix3CVQcDhF9xTQKBgQC9KwEfyP546vrHntaZd5jBP++f7pTCpXH7\nXmP+OMSyBQGOJ1B5kv/a5KZly2F+udfkMFCPIdEFiUVmqBJCXKtfcxhygJ7OGQ0K\nubPZ37y1fY7TG4d6fASb7gD/CDBwVPFZCvbKiaaF6/B1nTQtKvxdAMYocfsl8STR\ni0pEd+io4wKBgQCu9mycb4WWuSxBFZWEyqWJTCGmvktE0YHTWzEOQ6WnDguSIkc6\nHGp6VeII119QF7Wv7605cesyg5vuxOzgaY0pe4XAcoylBqx3hKIvWFhCFKgnsrHU\n1PejfcbgIBiFXNiGHxo1E8/Fve9uWJDLsg68veCXE9Y5yGweJhgC28X0pQKBgEbV\nP4qDXKYyds0gsQKuQci7BCNC1vk7sj6Jza932k8+iKKOHhgn7x4r2BLt4Qfu1uRf\nIws1gmssR4x1CsFGqfUHx/O4Lb7GqpeFic7fdG4RIdXyzPwUTDWHHWBh1KF7bRQG\ngvq8KFqlSlkAEHWJTw4UKB8k7wH6FetQ2PJiZAA5AoGAeCr6N8wnYKU6m182h/5w\n75cbAv5rxP7Sf9HYKYCaPowalSMu9DtZdMFNoWYfRk45AR6pavisU/R5+7N6WwnC\nNGgKlyLJ19PEsVGauPWbmyBkNTjVLmFJfeD5MYtvuzT1OdoLm5Oo6+orlT54n5P5\n12YgNJr8571b+mToO94dB7Y=\n-----END PRIVATE KEY-----\n",
+  "client_email": "nodejs-cinema-cloud@cinema-cloud.iam.gserviceaccount.com",
+  "client_id": "102418261544929752745",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/nodejs-cinema-cloud%40cinema-cloud.iam.gserviceaccount.com"
+}

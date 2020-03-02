@@ -13,7 +13,10 @@ const uploadImage = (file) => new Promise((resolve, reject) => {
   fs.writeFileSync(path.join(pathToPosterFolder, `/${originalname}`), buffer);
 
   cloudinary.uploader.upload(path.join(pathToPosterFolder, `/${originalname}`), {
-    folder: 'poster'
+    folder: 'poster',
+    width: 185,
+    height: 278,
+    crop: "scale"
   }, (err, res) => {
     err ? reject(err) : resolve(res);
   })

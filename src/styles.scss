@@ -1,8 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "./app/style/variable.scss";
 
 html, body {
   height: 100%;
+  background-color: $body-color;
 }
 
 body {
@@ -15,10 +17,10 @@ body {
   }
 
   &::-webkit-scrollbar-track {
-    background: #1e1e24;
+    background: $bg-nav-primary;
   }
 
   &::-webkit-scrollbar-thumb {
-    background: #6649b8;
+    background: $icon-primary;
   }
 }

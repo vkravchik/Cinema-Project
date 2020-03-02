@@ -35,14 +35,19 @@ router.post('/', async (req, res, next) => {
   }
 });
 
-router.put('/', (req, res) => {
+router.put('/', async (req, res, next) => {
   const { id, name, description, genresId } = req.body;
+  const { file } = req;
 
-  Film.findOneAndUpdate({_id: id}, {name, description, genresId}, {new: true}, (err, doc) => {
-    if (err) return err;
+  const poster = await uploadImage(file);
 
-    res.send(doc);
-  });
+  if (poster) {
+    Film.findOneAndUpdate({_id: id}, {name, description, genresId, posterUrl: poster.secure_url,}, {new: true}, (err, doc) => {
+      if (err) return err;
+
+      res.send(doc);
+    });
+  }
 });
 
 router.delete('/:id', (req, res) => {

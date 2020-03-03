@@ -8,7 +8,7 @@
     </li>
 
     <li class="nav-item">
-      <a href="#" class="nav-link" routerLink="/">
+      <a href="#" class="nav-link" routerLink="/" (click)="setActive('/')" [ngClass]="{active: activeLink === '/'}">
         <mat-icon>home</mat-icon>
         <span class="link-text">Home</span>
       </a>
@@ -41,7 +41,7 @@
         <span class="link-text">Logout</span>
       </a>
       <ng-template #loginBlock>
-        <a href="#" class="nav-link" routerLink="/login">
+        <a href="#" class="nav-link" routerLink="/login" (click)="setActive('/login')" [ngClass]="{active: activeLink === '/login'}">
           <mat-icon>fingerprint</mat-icon>
           <span class="link-text">Login</span>
         </a>

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../core/services/auth.service';
-import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-menu',
@@ -9,6 +8,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class MenuComponent implements OnInit {
   isAuth: boolean;
+  activeLink = '/';
 
   constructor(private authService: AuthService) { }
 
@@ -22,4 +22,7 @@ export class MenuComponent implements OnInit {
     this.authService.logout();
   }
 
+  setActive(link: string): void {
+    this.activeLink = link;
+  }
 }

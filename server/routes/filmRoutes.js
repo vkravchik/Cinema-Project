@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 const Film = require('../models/Film');
-const { uploadImage, destroyImage } = require('../helpers');
+const { uploadPhoto, uploadPoster, destroyImage } = require('../helpers');
 
 router.get('/', (req, res) => {
  Film.find({}, (err, doc) => {
@@ -12,14 +12,17 @@ router.get('/', (req, res) => {
 router.post('/', async (req, res, next) => {
   try {
     const { name, description, genresId } = req.body;
-    const { file } = req;
+    const { photoFile, posterFile } = req.files;
 
-    const poster = await uploadImage(file);
+    const photo = await uploadPhoto(photoFile[0]);
+    const poster = await uploadPoster(posterFile[0]);
 
-    if (poster) {
+    if (photo && poster) {
       const newFilm = new Film({
         name,
         description,
+        photoUrl: photo.secure_url,
+        photoId: photo.public_id,
         posterUrl: poster.secure_url,
         posterId: poster.public_id,
         genresId
@@ -32,6 +35,7 @@ router.post('/', async (req, res, next) => {
       });
     }
   } catch (error) {
+    console.log(error);
     next(error)
   }
 });

@@ -5,5 +5,8 @@ export interface Film {
   name: string;
   description: string;
   genresId: Genre[];
+  photoUrl: string;
+  photoId: string;
   posterUrl: string;
+  posterId: string;
 }

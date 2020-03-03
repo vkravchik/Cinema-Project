@@ -12,7 +12,7 @@ require('dotenv').config();
 const multerMid = multer({
   storage: multer.memoryStorage(),
   limits: {
-    fileSize: 5 * 1024 * 1024,
+    fileSize: 5 * 1024 * 1024
   }
 });
 
@@ -27,7 +27,11 @@ const dbName = process.env.DB_NAME || 'cinema';
 // App Use
 app.use(cors());
 app.use(express.json());
-app.use(multerMid.single('file'));
+app.use(multerMid.fields([{
+  name: 'photoFile'
+}, {
+  name: 'posterFile'
+}]));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '../dist/AngularTesting')));
 

@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 const filmSchema = mongoose.Schema({
   name: String,
   description: String,
+  photoUrl: String,
+  photoId: String,
   posterUrl: String,
   posterId: String,
   genresId: [{

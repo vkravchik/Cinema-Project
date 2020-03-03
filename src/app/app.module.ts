@@ -17,6 +17,7 @@ import { FilmService } from './core/services/film.service';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AuthService } from './core/services/auth.service';
 import { AuthComponent } from './pages/auth/auth.component';
+import { FilmComponent } from './pages/film/film.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AuthComponent } from './pages/auth/auth.component';
     SnackDirective,
     TableComponent,
     CardComponent,
-    AuthComponent
+    AuthComponent,
+    FilmComponent
   ],
   imports: [
     BrowserModule,

@@ -14,4 +14,12 @@
   .movie-title {
     color: $text-hover;
   }
+
+  &:hover {
+    cursor: pointer;
+
+    img {
+      opacity: .6;
+    }
+  }
 }

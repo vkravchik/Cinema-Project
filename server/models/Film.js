@@ -4,6 +4,7 @@ const filmSchema = mongoose.Schema({
   name: String,
   description: String,
   posterUrl: String,
+  posterId: String,
   genresId: [{
     type: mongoose.Schema.Types.ObjectID,
     ref: 'genres'

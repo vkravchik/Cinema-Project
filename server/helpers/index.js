@@ -18,10 +18,22 @@ const uploadImage = (file) => new Promise((resolve, reject) => {
     height: 278,
     crop: "scale"
   }, (err, res) => {
-    err ? reject(err) : resolve(res);
+    if (err) reject(err);
+
+    fs.unlinkSync(path.join(pathToPosterFolder, `/${originalname}`));
+    resolve(res);
+  })
+});
+
+const destroyImage = (posterId) => new Promise((resolve, reject) => {
+  cloudinary.uploader.destroy(posterId, (err, res) => {
+    if (err) reject(err);
+
+    resolve(res);
   })
 });
 
 module.exports = {
-  uploadImage
+  uploadImage,
+  destroyImage
 };

@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 const Film = require('../models/Film');
-const { uploadImage } = require('../helpers');
+const { uploadImage, destroyImage } = require('../helpers');
 
 router.get('/', (req, res) => {
  Film.find({}, (err, doc) => {
@@ -21,6 +21,7 @@ router.post('/', async (req, res, next) => {
         name,
         description,
         posterUrl: poster.secure_url,
+        posterId: poster.public_id,
         genresId
       });
 
@@ -55,6 +56,8 @@ router.delete('/:id', (req, res) => {
 
   Film.findOneAndDelete({_id: id}, (err, doc) => {
     if (err) return err;
+
+    destroyImage(doc.posterId);
 
     res.send(doc);
   });

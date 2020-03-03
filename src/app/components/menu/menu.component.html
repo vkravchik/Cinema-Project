@@ -21,14 +21,14 @@
       </a>
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item" *ngIf="isAuth">
       <a href="#" class="nav-link">
         <mat-icon>bookmarks</mat-icon>
         <span class="link-text">Bookmarks</span>
       </a>
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item" *ngIf="isAuth">
       <a href="#" class="nav-link">
         <mat-icon>settings</mat-icon>
         <span class="link-text">Settings</span>
@@ -36,10 +36,16 @@
     </li>
 
     <li class="nav-item">
-      <a href="#" class="nav-link">
+      <a href="#" class="nav-link" *ngIf="isAuth; else loginBlock" (click)="logout()">
         <mat-icon>exit_to_app</mat-icon>
         <span class="link-text">Logout</span>
       </a>
+      <ng-template #loginBlock>
+        <a href="#" class="nav-link" routerLink="/login">
+          <mat-icon>fingerprint</mat-icon>
+          <span class="link-text">Login</span>
+        </a>
+      </ng-template>
     </li>
   </ul>
 </nav>

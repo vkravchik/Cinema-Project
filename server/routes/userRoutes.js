@@ -34,7 +34,7 @@ router.post('/login', (req, res) => {
           isBlocked: user.isBlocked
         }, jwtKey);
 
-        res.send({
+        res.status(200).send({
           success: true,
           token
         });
@@ -57,7 +57,7 @@ router.post('/register', (req, res) => {
     username,
     password: hashedPassword,
     isActivated: true,
-    isAdmin: false,
+    isAdmin: true,
     isBlocked: false,
   };
 

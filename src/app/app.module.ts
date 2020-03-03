@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppMaterialModule } from './app-material.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MenuComponent } from './components/menu/menu.component';
 import { SnackComponent } from './components/snack/snack.component';
 import { SnackDirective } from './core/directives/snack.directive';
@@ -15,6 +15,8 @@ import { CardComponent } from './components/card/card.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FilmService } from './core/services/film.service';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { AuthService } from './core/services/auth.service';
+import { AuthComponent } from './pages/auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     SnackComponent,
     SnackDirective,
     TableComponent,
-    CardComponent
+    CardComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
@@ -33,10 +36,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     AppMaterialModule,
     FormsModule,
     HttpClientModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ReactiveFormsModule
   ],
   providers: [
-    FilmService
+    FilmService,
+    AuthService
   ],
   entryComponents: [SnackComponent],
   bootstrap: [AppComponent]

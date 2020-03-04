@@ -129,4 +129,33 @@ mat-icon {
   }
 }
 
+@media only screen and (max-width: 600px) {
+  ::ng-deep {
+    .main {
+      padding: 0 !important;
+    }
+  }
+
+  .header {
+    .helper {
+      width: 100%;
+      background: transparent;
+
+      &:before {
+        content: none;
+      }
+    }
+
+    .poster {
+      opacity: .4;
+      background-position: center;
+
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+    }
+  }
+}
+
 

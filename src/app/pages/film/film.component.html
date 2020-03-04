@@ -1,1 +1,37 @@
-<p>film works!</p>
+<div class="film-block">
+  <div class="header" *ngIf="film">
+    <div class="helper">
+      <div class="film-detail">
+        <a class="film-name">
+          <mat-icon (click)="backToHome()">keyboard_arrow_left</mat-icon>
+          <span class="h2">{{film.name}}</span>
+        </a>
+
+        <div class="other-block">
+          <mat-icon>date_range</mat-icon>
+          <span>{{film.year}}</span>
+
+          <mat-icon>timer</mat-icon>
+          <span>{{film.duration}} minutes</span>
+
+          <mat-icon>star</mat-icon>
+          <span>{{film.rating}}</span>
+        </div>
+
+        <div class="genres-block">
+          <span  *ngFor="let genre of film.genresId">{{genre.name}}</span>
+        </div>
+
+        <div class="description-block">
+          {{film.description}}
+        </div>
+      </div>
+    </div>
+    <div class="poster" [ngStyle]="setBgImage()"></div>
+  </div>
+  <mat-tab-group>
+    <mat-tab label="First"> Content 1 </mat-tab>
+    <mat-tab label="Second"> Content 2 </mat-tab>
+    <mat-tab label="Third"> Content 3 </mat-tab>
+  </mat-tab-group>
+</div>

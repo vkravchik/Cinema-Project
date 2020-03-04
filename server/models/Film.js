@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Float = require('mongoose-float').loadType(mongoose);
 
 const filmSchema = mongoose.Schema({
   name: String,
@@ -7,6 +8,9 @@ const filmSchema = mongoose.Schema({
   photoId: String,
   posterUrl: String,
   posterId: String,
+  year: Number,
+  duration: Number,
+  rating: Float,
   genresId: [{
     type: mongoose.Schema.Types.ObjectID,
     ref: 'genres'

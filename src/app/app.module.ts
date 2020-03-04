@@ -18,6 +18,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AuthService } from './core/services/auth.service';
 import { AuthComponent } from './pages/auth/auth.component';
 import { FilmComponent } from './pages/film/film.component';
+import { Location } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,7 @@ import { FilmComponent } from './pages/film/film.component';
   ],
   providers: [
     FilmService,
-    AuthService
+    AuthService,
   ],
   entryComponents: [SnackComponent],
   bootstrap: [AppComponent]

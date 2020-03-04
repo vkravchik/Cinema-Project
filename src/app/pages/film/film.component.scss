@@ -1,0 +1,132 @@
+@import "src/app/style/variable";
+
+::ng-deep {
+  .main {
+    padding: 0 0 0 1rem !important;
+  }
+}
+
+mat-icon {
+  display: flex;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 0;
+  padding: 20px;
+  height: auto;
+  background-position: top;
+  background-size: cover;
+  color: #fff;
+  text-align: left;
+  min-height: 500px;
+
+  .helper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 30%;
+    background: #141414;
+    z-index: 2;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 100%;
+      bottom: 0;
+      width: 100%;
+      background-image: linear-gradient(to right,#141414,transparent);
+    }
+
+    .film-detail {
+      z-index: 3;
+
+      .film-name {
+        display: flex;
+        align-items: center;
+        margin: 2rem 0 2rem;
+
+        .h2 {
+          font-size: 1.5rem;
+
+        }
+
+        mat-icon {
+          font-size: 2rem;
+          margin: 0 1rem 0 .5rem;
+
+          &:hover {
+            color: $icon-primary;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .other-block {
+        display: flex;
+        align-items: center;
+        margin-bottom: 2rem;
+
+        mat-icon {
+          font-size: 1.2rem;
+          margin: 0 0 0 1rem;
+        }
+      }
+
+      .genres-block {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 2rem;
+
+        span {
+          margin: 0 1rem;
+        }
+      }
+
+      .description-block {
+        margin: 0 0 0 1rem;
+        padding: 0 0.5rem 0 0;
+        display: flex;
+        flex-wrap: wrap;
+        max-height: 300px;
+        overflow: hidden;
+
+        &:hover {
+          overflow: auto;
+
+          &::-webkit-scrollbar {
+            width: 0.25rem;
+          }
+
+          &::-webkit-scrollbar-track {
+            background: $bg-nav-primary;
+          }
+
+          &::-webkit-scrollbar-thumb {
+            background: $icon-primary;
+          }
+        }
+      }
+    }
+  }
+
+  .poster {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 30%;
+    bottom: 0;
+    right: 0;
+    width: 70%;
+    overflow: hidden;
+    background-size: cover;
+    background-position: initial;
+  }
+}
+
+

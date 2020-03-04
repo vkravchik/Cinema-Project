@@ -9,9 +9,19 @@ router.get('/', (req, res) => {
  }).populate('genresId');
 });
 
+router.get('/:id', (req, res) => {
+  const { id } = req.params;
+
+  Film.findOne({_id: id}, (err, doc) => {
+    if (err) return err;
+
+    res.send(doc);
+  }).populate('genresId');
+});
+
 router.post('/', async (req, res, next) => {
   try {
-    const { name, description, genresId } = req.body;
+    const { name, description, genresId, year, duration, rating } = req.body;
     const { photoFile, posterFile } = req.files;
 
     const photo = await uploadPhoto(photoFile[0]);
@@ -21,6 +31,9 @@ router.post('/', async (req, res, next) => {
       const newFilm = new Film({
         name,
         description,
+        year,
+        duration,
+        rating,
         photoUrl: photo.secure_url,
         photoId: photo.public_id,
         posterUrl: poster.secure_url,

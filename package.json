@@ -11,7 +11,7 @@
     "server": "nodemon server/index",
     "client": "npm run start",
     "dev": "npm-run-all server client",
-    "postinstall": "ng build --aot -prod",
+    "postinstall": "ng build --aot",
     "heroku-postbuild": "ng build --prod"
   },
   "private": true,

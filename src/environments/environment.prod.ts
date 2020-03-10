@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  tokenKey: 'Cinema: Token'
+  tokenKey: 'Cinema: Token',
+  apiUrl: 'https://cinema-city.herokuapp.com/api',
 };

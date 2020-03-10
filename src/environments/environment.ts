@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://cinema-city.herokuapp.com/api',
+  apiUrl: 'http://localhost:3001/api',
   tokenKey: 'Cinema: Token'
 };
 

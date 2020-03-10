@@ -19,7 +19,7 @@ const multerMid = multer({
 // Const
 const app = express();
 
-const serverPort = process.env.SERVER_PORT || 3001;
+const serverPort = process.env.PORT || 3001;
 const dbUrl = process.env.DB_URL || '127.0.0.1';
 const dbPort = process.env.DB_PORT || '27017';
 const dbName = process.env.DB_NAME || 'cinema';
